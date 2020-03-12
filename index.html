@@ -1,0 +1,369 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="widdh=device-widdh, initial-scale=1">
+    <title>Roam Cheat Sheet</title>
+
+    <link rel="me" href="https://mamot.fr/@lithrel" />
+    <link rel="me" href="https://twitter.com/lithrel" />
+    <link rel="me" href="https://gitlab.com/lithrel/" />
+    <link rel="me" href="https://github.com/lithrel/" />
+
+    <style>
+    body {
+        color: #202b33;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9em;
+    }
+    h1 {
+        margin: 0;
+        text-align: center;
+    }
+    h2 {
+        font-weight: 500;
+        margin: 0 0 0 50px;
+    }
+    main {
+        display: flex;
+        flex-flow: row wrap;
+        max-width: 1150px;
+        margin: 0 auto;
+    }
+    div.col {
+        display: flex;
+        flex-flow: column wrap;
+        width: 270px;
+        margin: 0 auto;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 5px;
+        padding: 5px;
+        transition: 0.3s;
+        width: 250px;
+    }
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .card ul {
+        margin: 0;
+        list-style: none;
+        padding: 3px 0;
+    }
+    .card dl {
+        margin: 10px 0;
+        padding: 0;
+        width: 100%;
+
+        font-size: 0.9em;
+
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+    .card dt::before,
+    .card li::before  {
+        content: "• ";
+        color: #666;
+    }
+    .card dt {
+        margin: 0;
+        padding: 3px 0;
+        width: 50%;
+        font-size: 0.92em;
+
+        flex:0 0 50%;
+        text-align: left;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .card dd {
+        flex: 0 0 50%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        margin: 0;
+        padding: 3px 0;
+        text-align: right;
+    }
+    .card dd.fw {
+        flex: 0 0 100%;
+    }
+    .card dd.details {
+        display: none;
+        flex: 0 0 100%;
+        font-size: 11px;
+        text-align: left;
+    }
+    .card dt:hover ~ dd.details, dd.details:hover { display: block; }
+    .kc { /* key combination */
+        background: #fcfcfc;
+        border: 2px groove #eee;
+        border-radius: 5px;
+        color: #444;
+        font-size: 0.92em;
+        padding: 0 0.3em;
+    }
+    .st { /* syntax */
+        background: #eee;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        color: #333;
+        font-size: 0.92em;
+        padding: 1px 0.3em;
+        margin: 1px 0;
+        line-height: 1.8em;
+    }
+    .cmd {
+        background: #eee;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        color: #333;
+        font-size: 0.9em;
+        padding: 0;
+        margin: 1px 0;
+        line-height: 1.6em;
+    }
+    footer {
+        display: flex;
+        flex-flow: row wrap;
+        max-width: 1150px;
+        margin: 20px auto;
+        justify-content: center;
+    }
+    footer h2 {
+        margin: 0;
+        text-align: center;
+    }
+    footer ul {
+        font-size: 0.85em;
+    }
+    #version-control dt {flex:0 0 60%; width: 60%;}
+    #version-control dd:not(.fw) {flex:0 0 40%; width: 40%;}
+    #lists dt {flex:0 0 55%; width: 55%;}
+    #lists dd:not(.fw) {flex:0 0 45%; width: 45%;}
+    #links dt {flex:0 0 65%; width: 65%;}
+    #links dd:not(.fw) {flex:0 0 35%; width: 35%;}
+    .card dd.details ul { padding: 0; }
+    .card dd.details li:before { content: " / "; }
+    .card dd.details li {
+        margin-left: 50%;
+        width: 50%;
+    }
+    </style>
+</head>
+<body>
+    <h1>Roam Cheat Sheet</h1>
+    <main>
+        <div class="col">
+            <div class="card" id="autocomplete">
+                <h2>Autocomplete</h2>
+                <dl>
+                    <dt>Commands</dt>
+                    <dd><span class="st">/</span></dd>
+                    <dd class="details">
+                        <ul>
+                            <li class="cmd">TODO</li>
+                            <li class="cmd">Page Reference</li>
+                            <li class="cmd">Upload an Image</li>
+                            <li class="cmd">Block Reference</li>
+                            <li class="cmd">Slider</li>
+                            <li class="cmd">Block Embed</li>
+                            <li class="cmd">Current Time</li>
+                            <li class="cmd">Date Picker</li>
+                            <li class="cmd">Today</li>
+                            <li class="cmd">Tomorrow</li>
+                            <li class="cmd">Yesterday</li>
+                            <li class="cmd">Embed Youtube Video</li>
+                            <li class="cmd">External Link</li>
+                            <li class="cmd">Bold</li>
+                            <li class="cmd">Italics</li>
+                            <li class="cmd">Strikethrough</li>
+                            <li class="cmd">Code Inline</li>
+                            <li class="cmd">Latex</li>
+                            <li class="cmd">Code Block</li>
+                            <li class="cmd">Image Markdown</li>
+                            <li class="cmd">Table</li>
+                            <li class="cmd">Page Mentions</li>
+                            <li class="cmd">Block Mentions</li>
+                            <li class="cmd">Word Count</li>
+                            <li class="cmd">Find orphan blocks</li>
+                        </ul>
+                    </dd>
+                    <dt>Page Reference</dt>
+                    <dd><span class="st">[[]]</span></dd>
+                    <dt>Block Reference</dt>
+                    <dd><span class="st">(())</span></dd>
+                    <dt>Tag (= Page Ref)</dt>
+                    <dd><span class="st">#</span></dd>
+                </dl>
+            </div>
+            <div class="card" id="navigation">
+                <h2>Navigation</h2>
+                <dl>
+                    <dt>Full Text Search</dt>
+                    <dd><span class="kc">Ctrl-u</span></dd>
+                    <dt>Open Link in Sidebar</dt>
+                    <dd><span class="kc">Shift+Click</span></dd>
+                    <dt>Context Menu</dt>
+                    <dd><span class="kc">Right Click</span></dd>
+                    <dt>Toggle Brackets</dt>
+                    <dd><span class="kc">Ctrl-c Ctrl-b</span></dd>
+                    <dt>Toggle Edit Icon</dt>
+                    <dd><span class="kc">Ctrl-c Ctrl-s</span></dd>
+                    <dt>Jump to Daily Notes</dt>
+                    <dd><span class="kc">Alt-d</span></dd>
+                </dl>
+            </div>
+            <div class="card" id="links">
+                <h2>Links</h2>
+                <dl>
+                    <dt>Follow link under cursor</dt>
+                    <dd><span class="kc">Ctrl-o</span></dd>
+                    <dt>Open link in sidebar</dt>
+                    <dd><span class="kc">Ctrl-Shift-o</span></dd>
+                    <dd class="fw"><span class="kc">Shift+Click</span></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="formatting">
+                <h2>Formatting</h2>
+                <dl>
+                    <dt>Heading</dt>
+                        <dd><span class="kc">Ctrl-Alt-1,2,3,0</span></dd>
+                    <dt>Todo / Done</dt>
+                        <dd><span class="kc">Ctrl-Enter</span></dd>
+                        <dd class="fw"><span class="st">{{[[TODO]]}} / {{[[DONE]]}}</span></dd>
+                    <dt>Bold</dt>
+                        <dd><span class="kc">Ctrl-b</span></dd>
+                        <dd class="fw"><span class="st">**text**</span></dd>
+                    <dt>Italic</dt>
+                        <dd><span class="kc">Ctrl-i</span></dd>
+                        <dd class="fw"><span class="st">text</span></dd>
+                    <dt>Highlight</dt>
+                        <dd><span class="kc">Ctrl-h</span></dd>
+                        <dd class="fw"><span class="st">^^text^^</span></dd>
+                    <dt>Html Link</dt>
+                        <dd><span class="kc">Ctrl-k</span></dd>
+                        <dd class="fw"><span class="st">[text](URL)</span></dd>
+                    <dt>Strikethrough</dt>
+                        <dd><span class="st">~~text~~</span></dd>
+                    <dt>Latex</dt>
+                        <dd><span class="st">$$E = mc^2$$</span></dd>
+                    <dt>Image</dt>
+                        <dd><span class="st">![alt text](URL)</span></dd>
+                    <dt>Code</dt>
+                        <dd><span class="st">`let a = 42`</span></dd>
+                    <dt>Code Block</dt>
+                        <dd><span class="st">```a code block```</span></dd>
+                </dl>
+            </div>
+            <div class="card" id="editing">
+                <h2>Editing</h2>
+                <dl>
+                    <dt>Undo</dt>
+                    <dd><span class="kc">Ctrl-z</span></dd>
+                    <dt>Redo</dt>
+                    <dd><span class="kc">Ctrl-y</span></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="lists">
+                <h2>Everything Lists</h2>
+                <dl>
+                    <dt>Create New Block</dt>
+                    <dd><span class="kc">Enter</span></dd>
+                    <dt>New Line in Block</dt>
+                    <dd><span class="kc">Shift-Enter</span></dd>
+                    <dt>Indent Block</dt>
+                    <dd><span class="kc">Tab</span></dd>
+                    <dt>Unindent Block</dt>
+                    <dd><span class="kc">Shift-Tab</span></dd>
+                    <dt>Move Block</dt>
+                    <dd><span class="kc">Alt-Shift-Arrow</span></dd>
+                    <dt>Expand</dt>
+                    <dd><span class="kc">Ctrl-↓</span></dd>
+                    <dt>Collapse</dt>
+                    <dd><span class="kc">Ctrl-↑</span></dd>
+                    <dt>Select Block Above</dt>
+                    <dd><span class="kc">Shift-↑</span></dd>
+                    <dt>Select Block Below</dt>
+                    <dd><span class="kc">Shift-↓</span></dd>
+                    <dt>Select All Blocks</dt>
+                    <dd><span class="kc">Ctrl-Shift-a</span></dd>
+                    <dt>Zoom In Block</dt>
+                    <dd><span class="kc">Alt-→</span></dd>
+                    <dt>Zoom Out Of Block</dt>
+                    <dd><span class="kc">Alt-←</span></dd>
+                </dl>
+            </div>
+            <div class="card" id="version-control">
+                <h2>Version Control</h2>
+                <dl>
+                    <dt>Add Version</dt>
+                    <dd><span class="kc">Ctrl-Comma</span></dd>
+                    <dt>Expand all Versions</dt>
+                    <dd><span class="kc">Ctrl-Period</span></dd>
+                    <dt>Cycle Version Right</dt>
+                    <dd><span class="kc">Ctrl-→</span></dd>
+                    <dt>Cycle Version Left</dt>
+                    <dd><span class="kc">Ctrl-←</span></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="#">
+                <h2>Extras</h2>
+                <dl>
+                    <dt>Attribute</dt>
+                    <dd><span class="st">MyAttribute:: values</span></dd>
+                    <dt>Select List</dt>
+                    <dd><span class="st">{{or: choice 1 | choice 2 | choice 3}}</span></dd>
+                    <dt>Word Count</dt>
+                    <dd><span class="st">{{word-count}}</span></dd>
+                    <dt>Encryption</dt>
+                    <dd><span class="st">{{encrypt}}</span></dd>
+                    <dt>Kanban Board</dt>
+                    <dd><span class="st">{{kanban}}</span></dd>
+                    <dt>Table</dt>
+                    <dd><span class="st">{{table}}</span></dd>
+                    <dt>Slider</dt>
+                    <dd><span class="st">{{Slider}}</span></dd>
+                    <dt>Orphans</dt>
+                    <dd><span class="st">{{orphans}}</span></dd>
+                    <dt>Attribute table</dt>
+                    <dd><span class="st">{{attr-table: [[MyAttribute]]}}</span></dd>
+                    <dt>Queries</dt>
+                    <dd><span class="st">{{query: {and: [[Apple]] [[Pear]} }}</span></dd>
+                    <dt>Youtube Video</dt>
+                    <dd><span class="st">{{youtube: URL}}</span></dd>
+                </dl>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="card">
+            <h2>Sources & More</h2>
+            <ul>
+                <li><a href="https://roamresearch.com/#/v8/help/page/dxTi-iUs2">Roam Changelog</a></li>
+                <li><a href="https://roamresearch.com/#/v8/help/page/LJOc7nRiO">Attributes in Roam</a></li>
+                <li><a href="https://roamresearch.com/#/v8/help/page/4rzvjiGhW">How to write Queries</a></li>
+                <li><a href="https://roamresearch.com/#/v8/help/page/5crh5i3fJ">Demoing Encryption</a></li>
+                <li><a href="https://twitter.com/search?q=%23roamcult">#RoamCult</a> on Twitter</li>
+                <li><a href="https://www.roambrain.com/">RoamBrain - An information hub</a></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Mistakes & Missed</h2>
+            <ul>
+                <li>Ping me on <a href="https://mamot.fr/@lithrel" rel="me">Mastodon</a> or <a href="https://mamot.fr/@lithrel" rel="me">Twitter</a></li>
+                <li>Or better, fork it and make it your own <a href="https://github.com/lithrel/roam-cheatsheet">on Github</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
